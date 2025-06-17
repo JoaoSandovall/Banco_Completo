@@ -1,76 +1,58 @@
 package com.example.bancofuncional.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+import java.util.Date;
 
-// CORRIGIDO: Removidos os imports inválidos que começavam com "main".
-// Os imports de "java.util" são os corretos para esta classe.
-
+@Entity
+@Table(name = "conta")
 public class Conta {
-    private final String agencia = "0001";
-    private String numero;
-    private double saldo;
-    private Usuario titular;
-    private List<Transacao> extrato;
-    private CartaoCredito cartaoCredito;
 
-    public Conta() {
-        // Construtor vazio para desserialização
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_conta;
 
-    public Conta(String numero, Usuario titular, double saldoInicial) {
-        this.numero = numero;
-        this.titular = titular;
-        this.saldo = saldoInicial;
-        this.extrato = new ArrayList<>();
-        this.cartaoCredito = new CartaoCredito(".... .... .... 1234", titular.getNomeCompleto(), "03/2034", 102304.87);
-    }
+    private String numeroConta;
+    private Double saldo;
 
-    public double getSaldo() {
-        return saldo;
-    }
+    @Enumerated(EnumType.STRING)
+    private TipoConta tipoConta;
+    private Date dataAbertura;
+    @Enumerated(EnumType.STRING)
+    private StatusConta status;
 
-    public CartaoCredito getCartaoCredito() {
-        return cartaoCredito;
-    }
-    
-    public String getNumero() { 
-        return numero; 
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", nullable = false)
+    @JsonBackReference
+    private Cliente cliente;
 
-    public String getAgencia() { 
-        return agencia; 
+    public Conta() {}
+
+    public Conta(String numeroConta, Cliente cliente, Double saldo, TipoConta tipoConta) {
+        this.numeroConta = numeroConta;
+        this.cliente = cliente;
+        this.saldo = saldo;
+        this.tipoConta = tipoConta;
+        this.dataAbertura = new Date();
+        this.status = StatusConta.ATIVA;
     }
 
-    public Usuario getTitular() {
-        return titular;
-    }
+    // --- GETTERS E SETTERS PARA TODOS OS CAMPOS ---
+    public Long getId_conta() { return id_conta; }
+    public void setId_conta(Long id_conta) { this.id_conta = id_conta; }
+    public String getNumeroConta() { return numeroConta; }
+    public void setNumeroConta(String numeroConta) { this.numeroConta = numeroConta; }
+    public Double getSaldo() { return saldo; } // Resolve o erro
+    public void setSaldo(Double saldo) { this.saldo = saldo; }
+    public TipoConta getTipoConta() { return tipoConta; }
+    public void setTipoConta(TipoConta tipoConta) { this.tipoConta = tipoConta; }
+    public Date getDataAbertura() { return dataAbertura; }
+    public void setDataAbertura(Date dataAbertura) { this.dataAbertura = dataAbertura; }
+    public StatusConta getStatus() { return status; }
+    public void setStatus(StatusConta status) { this.status = status; }
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
 
-    public boolean sacar(double valor, String descricao, Transacao.Tipo tipo) {
-        if (valor > this.saldo) {
-            System.out.println("Saldo insuficiente para a operação.");
-            return false;
-        }
-        this.saldo -= valor;
-        this.extrato.add(new Transacao(valor, descricao, tipo));
-        return true;
-    }
-
-    public void depositar(double valor, String descricao, Transacao.Tipo tipo) {
-        this.saldo += valor;
-        this.extrato.add(new Transacao(valor, descricao, tipo));
-    }
-
-    public void exibirExtrato() {
-        System.out.println("\n--- EXTRATO DETALHADO ---");
-        if (extrato.isEmpty()) {
-            System.out.println("Nenhuma transação recente.");
-        } else {
-            for (Transacao t : this.extrato) {
-                System.out.println(t);
-            }
-        }
-        System.out.println("-------------------------");
-        System.out.printf("SALDO ATUAL: R$ %.2f%n", this.saldo);
-    }
+    public enum TipoConta { POUPANCA, CORRENTE, INVESTIMENTO }
+    public enum StatusConta { ATIVA, ENCERRADA, BLOQUEADA }
 }

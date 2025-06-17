@@ -1,25 +1,42 @@
 package com.example.bancofuncional.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "usuario")
+// Removida a herança daqui, pois estamos tratando como composição para alinhar com o banco de dados
 public class Usuario {
-    private String nomeCompleto;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_usuario;
+
+    private String nome;
     private String cpf;
-    private String email;
     private String hashSenha;
-    private Conta conta;
+    // O campo tipoUsuario, email, etc. do seu SRS viriam aqui se necessário
 
-    public Usuario() {} 
+    @OneToOne(mappedBy = "usuario")
+    @JsonBackReference
+    private Cliente cliente;
 
-    public Usuario(String nomeCompleto, String cpf, String email, String senhaHasheada) {
-        this.nomeCompleto = nomeCompleto;
-        this.cpf = cpf;
-        this.email = email;
-        this.hashSenha = senhaHasheada;
-    }
+    // Construtor vazio
+    public Usuario() {}
 
-    public String getNomeCompleto() { return this.nomeCompleto; }
-    public String getCpf() { return this.cpf; }
-    public String getEmail() { return this.email; }
-    public String getHashSenha() { return this.hashSenha; }
-    public Conta getConta() { return this.conta; }
-    public void setConta(Conta conta) { this.conta = conta; }
+    // --- GETTERS E SETTERS ---
+    public Long getId_usuario() { return id_usuario; }
+    public void setId_usuario(Long id_usuario) { this.id_usuario = id_usuario; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public String getCpf() { return cpf; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
+
+    public String getHashSenha() { return hashSenha; }
+    public void setHashSenha(String hashSenha) { this.hashSenha = hashSenha; }
+
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
 }
