@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Crédito</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <a href="home.html" class="back-arrow"><ion-icon name="arrow-back-outline"></ion-icon></a>
+            <span class="title">Cartão de Crédito</span>
+            <ion-icon class="menu-icon" name="menu-outline"></ion-icon>
+        </header>
+        <div class="main-content">
+            <div class="credit-card-visa">
+                <div class="visa-logo">VISA</div>
+                <div class="expiry">03/2034</div>
+                <div class="card-details">.... .... .... 1234</div>
+                <div class="card-holder">LUCAS ALEXANDRE S. B.</div>
+            </div>
+
+            <div class="credit-card-info">
+                <h3>Minha fatura atual</h3>
+                <p class="amount">R$ 23.458,98</p>
+                <div class="limit-bar">
+                    <div class="limit-bar-inner"></div>
+                </div>
+                <p class="available-limit">Limite disponível: R$ 102.304,87</p>
+            </div>
+
+            <div class="transactions-section">
+                <h3>Últimas Transações</h3>
+                <div class="transaction-item">
+                    <div class="transaction-icon up"><ion-icon name="arrow-up-outline"></ion-icon></div>
+                    <div class="transaction-details">
+                        <p class="name">SUBWAY AV CENTRO</p>
+                        <p class="date">22 DE JULHO 12:43</p>
+                    </div>
+                    <span class="transaction-amount debit">R$ 34,65</span>
+                </div>
+                <div class="transaction-item">
+                    <div class="transaction-icon up"><ion-icon name="arrow-up-outline"></ion-icon></div>
+                    <div class="transaction-details">
+                        <p class="name">SUBWAY AV CENTRO</p>
+                        <p class="date">22 DE JULHO 12:43</p>
+                    </div>
+                    <span class="transaction-amount debit">R$ 34,65</span>
+                </div>
+            </div>
+        </div>
+         <nav class="bottom-nav">
+            <a href="home.html" class="nav-item"><ion-icon name="home-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="stats-chart-outline"></ion-icon></a>
+            <a href="#" class="nav-item scan-button"><ion-icon name="scan-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="newspaper-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="person-outline"></ion-icon></a>
+        </nav>
+    </div>
+</body>
+</html>

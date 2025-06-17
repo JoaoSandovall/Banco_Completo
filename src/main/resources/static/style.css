@@ -1,0 +1,594 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #E9E6F5; /* A light lavender background for the body */
+    color: #4A4A4A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main App Container */
+.app-container {
+    width: 375px;
+    height: 812px;
+    background-color: #6A5ACD; /* Main purple theme color */
+    color: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.header .back-arrow {
+    font-size: 24px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.header .title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.header .menu-icon {
+    font-size: 24px;
+}
+
+/* Main Content Area */
+.main-content {
+    background-color: #F4F3F9;
+    color: #333;
+    flex-grow: 1;
+    border-radius: 40px 40px 0 0;
+    padding: 30px 25px;
+    overflow-y: auto;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+/* --- Login Screen --- */
+.login-container {
+    background-color: #6A5ACD;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.login-container .profile-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #FFFFFF;
+    color: #6A5ACD;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.login-container h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 30px;
+}
+
+.btn-primary {
+    background-color: #8A7DCF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 0;
+    width: 80%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-container a {
+    color: #D1C9FF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* --- Home Screen --- */
+.home-header {
+    display: flex;
+    align-items: center;
+    padding: 30px 25px;
+}
+
+.home-header .profile-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #4169E1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.home-header h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.balance-card, .investments-card, .credit-card-info, .transaction-list {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.balance-card .balance-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance-card h2 {
+    font-size: 16px;
+    color: #888;
+    margin: 0 0 5px;
+    font-weight: normal;
+}
+
+.balance-card .amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.balance-card .view-statement {
+    text-decoration: none;
+    color: #6A5ACD;
+    font-weight: 500;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.action-button .icon {
+    width: 60px;
+    height: 60px;
+    background-color: #E9E6F5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+}
+
+.investments-card h3, .credit-card-info h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+}
+
+.investment-details .total {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.investment-details .redeemable {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.bar-chart .bar {
+    background-color: #8A7DCF;
+    width: 15px;
+    border-radius: 5px;
+}
+
+/* --- Credit Card Screen --- */
+.credit-card-visa {
+    background: linear-gradient(135deg, #7B68EE, #6A5ACD);
+    border-radius: 20px;
+    padding: 25px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.credit-card-visa .visa-logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.credit-card-visa .card-details {
+    margin-top: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.credit-card-visa .card-holder {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.credit-card-visa .expiry {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 16px;
+}
+
+.credit-card-info .label {
+    font-size: 16px;
+    color: #888;
+}
+
+.credit-card-info .amount {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 5px 0 15px;
+}
+
+.limit-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #E0E0E0;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.limit-bar-inner {
+    height: 100%;
+    width: 70%; /* Example usage */
+    background-color: #6A5ACD;
+    border-radius: 4px;
+}
+
+.credit-card-info .available-limit {
+    font-size: 14px;
+    color: #555;
+}
+
+/* --- Transactions (Statement & Credit Card) --- */
+.transactions-section h3 {
+    margin: 30px 0 15px;
+    font-size: 18px;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #888;
+    margin: 20px 0 10px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #F0F0F0;
+}
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: #E9E6F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 22px;
+}
+.transaction-icon.up { color: #D9534F; }
+.transaction-icon.down { color: #5CB85C; }
+
+
+.transaction-details {
+    flex-grow: 1;
+}
+
+.transaction-details .name {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.transaction-details .date {
+    font-size: 13px;
+    color: #999;
+}
+
+.transaction-amount {
+    font-weight: 500;
+    font-size: 16px;
+}
+.transaction-amount.debit { color: #D9534F; }
+.transaction-amount.credit { color: #5CB85C; }
+
+
+/* --- Pix Transfer Screens --- */
+.transfer-content, .receipt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.transfer-content .available-balance {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 40px;
+}
+.transfer-content .available-balance span {
+    font-weight: bold;
+    color: #333;
+}
+
+.transfer-amount-input {
+    font-size: 48px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    text-align: center;
+    width: 100%;
+    color: #333;
+}
+.transfer-amount-input:focus {
+    outline: none;
+}
+
+.transfer-to {
+    margin-top: 10px;
+    color: #666;
+}
+.transfer-to span {
+    font-weight: 500;
+    color: #333;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 18px 0;
+    font-size: 18px;
+    background-color: #6A5ACD;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: auto; /* Push to bottom */
+}
+
+/* --- Pix Receipt Screen --- */
+.receipt-content .checkmark {
+    width: 120px;
+    height: 120px;
+    background-color: #E9E6F5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: #6A5ACD;
+    margin-bottom: 20px;
+}
+
+.receipt-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.receipt-content .amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 40px;
+}
+
+.receipt-details {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.receipt-details .section {
+    margin-bottom: 25px;
+}
+
+.receipt-details h3 {
+    font-size: 14px;
+    color: #999;
+    font-weight: normal;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.receipt-details p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin: 2px 0;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-top: 1px solid #F0F0F0;
+    height: 80px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.03);
+}
+
+.nav-item {
+    color: #999;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.nav-item.scan-button {
+    width: 64px;
+    height: 64px;
+    background-color: #6A5ACD;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    transform: translateY(-20px);
+    border: 5px solid #F4F3F9;
+}
+
+/* --- Cadastro Screen --- */
+.app-container.cadastro-bg {
+    background-color: #38325C; /* Cor de fundo escura da nova tela */
+}
+
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.cadastro-container h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #E9E6F5;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: #2F2C4A;
+    border: 1px solid #4A456F;
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 16px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #8A7DCF;
+}
+
+.icon-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.clear-btn {
+    background-color: #FF5E78;
+    color: #FFFFFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.visibility-btn {
+    color: #9E99CC;
+}
+
+.status-indicator-green {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #32E7A9;
+    border-radius: 50%;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #8075C4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

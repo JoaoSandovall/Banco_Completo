@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="home-header">
+            <div class="profile-icon">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <h1 id="welcome-message">Olá!</h1>
+        </header>
+
+        <div class="main-content">
+            
+            <div class="balance-card">
+                <div class="balance-info">
+                    <div>
+                        <h2>Saldo disponível</h2>
+                        <p class="amount" id="balance-amount">R$ 0,00</p>
+                    </div>
+                    <a href="#"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+                </div>
+                <a href="statement.html" class="view-statement">VER EXTRATO</a>
+            </div>
+
+            <div class="action-buttons">
+                <a href="pix_transfer.html" class="action-button">
+                    <span class="icon"><ion-icon name="diamond-outline"></ion-icon></span>
+                    Pix
+                </a>
+                <a href="#" class="action-button">
+                    <span class="icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+                    Transf.
+                </a>
+                <a href="statement.html" class="action-button">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    Extrato
+                </a>
+                <a href="credit_card.html" class="action-button">
+                    <span class="icon"><ion-icon name="card-outline"></ion-icon></span>
+                    Crédito
+                </a>
+            </div>
+
+            <div class="investments-card">
+                <h3>Investimentos</h3>
+                <div class="investment-details">
+                    <p class="total">Total investido <br> R$ 23.123,49</p>
+                    <div class="redeemable">
+                        <span>Disponível para resgate</span>
+                        <span>R$ 12.324,99</span>
+                    </div>
+                </div>
+                <h4>Seus rendimentos de 2025</h4>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 80%;"></div>
+                    <div class="bar" style="height: 50%;"></div>
+                    <div class="bar" style="height: 90%;"></div>
+                    <div class="bar" style="height: 40%;"></div>
+                    <div class="bar" style="height: 55%;"></div>
+                    <div class="bar" style="height: 75%;"></div>
+                    <div class="bar" style="height: 60%;"></div>
+                    <div class="bar" style="height: 70%;"></div>
+                </div>
+            </div>
+
+        </div> <nav class="bottom-nav">
+            <a href="home.html" class="nav-item"><ion-icon name="home-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="stats-chart-outline"></ion-icon></a>
+            <a href="#" class="nav-item scan-button"><ion-icon name="scan-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="newspaper-outline"></ion-icon></a>
+            <a href="#" class="nav-item"><ion-icon name="person-outline"></ion-icon></a>
+        </nav>
+
+    </div> <script src="script.js"></script>
+</body>
+</html>
